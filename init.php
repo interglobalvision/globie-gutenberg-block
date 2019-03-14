@@ -10,7 +10,7 @@ Override block style
 */
 function igv_gutenberg_block_style() {
   wp_enqueue_script('igv_style',
-    plugins_url('style.js', __FILE__ ),
+    plugins_url('js/style.js', __FILE__ ),
     array('wp-blocks')
   );
 }
@@ -23,7 +23,7 @@ function igv_gutenberg_block_type() {
   // Register block type script
   wp_register_script(
     'igv-block-type-editor',
-    plugins_url( 'type.js', __FILE__ ),
+    plugins_url( 'js/type.js', __FILE__ ),
     array(
       'wp-blocks',
       'wp-element',
@@ -34,9 +34,9 @@ function igv_gutenberg_block_type() {
   /* Register editor styles */
   wp_register_style(
     'igv-block-type-editor',
-    plugins_url( 'editor-style.css', __FILE__ ),
+    plugins_url( 'css/editor-style.css', __FILE__ ),
     array( 'wp-edit-blocks' ),
-    filemtime( plugin_dir_path( __FILE__ ) . 'editor-style.css' )
+    filemtime( plugin_dir_path( __FILE__ ) . 'css/editor-style.css' )
   );
 
   /* Register front-end styles */
@@ -47,9 +47,9 @@ function igv_gutenberg_block_type() {
   */
   wp_register_style(
     'igv-block-type',
-    plugins_url( 'front-style.css', __FILE__ ),
+    plugins_url( 'css/front-style.css', __FILE__ ),
     array(),
-    filemtime( plugin_dir_path( __FILE__ ) . 'front-style.css' )
+    filemtime( plugin_dir_path( __FILE__ ) . 'css/front-style.css' )
   );
 
   /* Register block type */
@@ -67,7 +67,7 @@ Register Sidebar
 function igv_sidebar_register() {
   wp_register_script(
     'igv-sidebar-script',
-    plugins_url( 'sidebar.js', __FILE__ ),
+    plugins_url( 'js/sidebar.js', __FILE__ ),
     array(
       'wp-plugins',
       'wp-edit-post',
@@ -78,7 +78,7 @@ function igv_sidebar_register() {
   );
   wp_register_style(
     'igv-sidebar-style',
-    plugins_url( 'sidebar-style.css', __FILE__ )
+    plugins_url( 'css/sidebar-style.css', __FILE__ )
   );
   register_meta( 'post', 'igv_sidebar_meta_block_field', array(
     'show_in_rest' => true,
