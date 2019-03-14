@@ -2,7 +2,7 @@
   const registerPlugin = wp.plugins.registerPlugin;
   const PluginSidebar = wp.editPost.PluginSidebar;
   const el = wp.element.createElement;
-  const Text = wp.components.TextControl;
+  const Select = wp.components.SelectControl;
   const withSelect = wp.data.withSelect;
   const withDispatch = wp.data.withDispatch;
 
@@ -25,11 +25,16 @@
   }
 
   const MetaBlockField = ( props ) => {
-    return el( Text, {
+    return el( Select, {
         label: 'Globie Meta Block Field',
         value: props.metaFieldValue,
-        onChange: ( content ) => {
-          props.setMetaFieldValue( content );
+        options: [
+          { label: 'Big', value: '100%' },
+          { label: 'Medium', value: '50%' },
+          { label: 'Small', value: '25%' },
+        ],
+        onChange: ( value ) => {
+          props.setMetaFieldValue( value );
         },
     } );
   }
