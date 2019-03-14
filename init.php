@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Globie Gutenberg Plugin
+Plugin Name: Globie Gutenberg Block
 */
 
 // Reference: https://wordpress.org/gutenberg/handbook
